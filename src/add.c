@@ -39,7 +39,5 @@ Expr *add_simplify(Add *add) {
 }
 
 void add_free(Add *add) {
-    free(add->a);
-    free(add->b);
     free(add);
 }
