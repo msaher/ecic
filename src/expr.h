@@ -1,5 +1,6 @@
 #ifndef EXPR_H
 #define EXPR_H
+#include <stdbool.h>
 
 typedef enum Etype {
     ADD,
@@ -11,11 +12,13 @@ typedef enum Etype {
 } Etype;
 
 typedef struct Add Add;
+typedef struct Mul Mul;
 typedef struct Var Var;
 
 typedef struct Expr {
     union {
         Add *add;
+        Mul *mul;
         int integer;
     };
     Etype type;
