@@ -14,6 +14,14 @@ Var *var_init(char *name, Expr *value) {
     return var;
 }
 
+char *var_name(Var *var) {
+    return var->name;
+}
+
+Expr *var_value(Var *var) {
+    return var->value;
+}
+
 void var_free(Var *var) {
     free(var);
 }
