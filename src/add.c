@@ -15,15 +15,15 @@ Add *add_init(Expr *a, Expr *b) {
     return add;
 }
 
-Expr *simplify(Add *add) {
+Expr *add_simplify(Add *add) {
     Expr *e1 = add->a;
     Expr *e2 = add->b;
 
     if (e1->type == ADD)
-        e1 = simplify(e1->add);
+        e1 = add_simplify(e1->add);
 
     if (e2->type == ADD)
-        e2 = simplify(e2->add);
+        e2 = add_simplify(e2->add);
 
     Expr *e = expr_init();
     if (e1->type == INT && e2->type == INT) {
