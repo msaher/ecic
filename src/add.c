@@ -25,15 +25,15 @@ Expr *simplify(Add *add) {
     if (e2->type == ADD)
         e2 = simplify(e2->add);
 
-    // TODO: free memory for add, e1, and e2?
+    Expr *e = expr_init();
     if (e1->type == INT && e2->type == INT) {
-
-        Expr *e = malloc(sizeof(Expr));
         e->type = INT;
         e->integer = e1->integer + e2->integer;
-        return e;
+    }
+    else {
+        e->type = ADD;
+        e->add = add;
     }
 
-    fprintf(stderr, "idk what to do here");
-    exit(1);
+    return e;
 }
