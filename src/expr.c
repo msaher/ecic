@@ -1,6 +1,5 @@
 #include "expr.h"
 #include "add.h"
-#include "int.h"
 #include <stdlib.h>
 
 Expr *expr_init() {
