@@ -7,6 +7,7 @@ typedef enum Etype {
     MUL,
     DIV,
     INT,
+    VAR,
 } Etype;
 
 struct Add;
@@ -19,5 +20,8 @@ typedef struct Expr {
     };
     Etype type;
 } Expr;
+
+Expr *expr_init();
+void expr_free(Expr *e);
 
 #endif
