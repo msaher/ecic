@@ -1,6 +1,7 @@
 #include "expr.h"
 #include "add.h"
 #include <stdlib.h>
+#include <stdbool.h>
 
 Expr *expr_init() {
     Expr *e = malloc(sizeof(Expr));
@@ -29,4 +30,8 @@ Expr *expr_int(int n) {
     e->type = INT;
     e->integer = n;
     return e;
+}
+
+bool expr_iszero(Expr *e) {
+    return e->type == INT && e->integer == 0;
 }

@@ -27,4 +27,6 @@ void expr_free(Expr *e);
 Expr *expr_simplify(Expr *e);
 Expr *expr_int(int n);
 
+bool expr_iszero(Expr *e);
+
 #endif
