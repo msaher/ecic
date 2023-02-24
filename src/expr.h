@@ -24,4 +24,5 @@ typedef struct Expr {
 Expr *expr_init();
 void expr_free(Expr *e);
 
+Expr *expr_simplify(Expr *e);
 #endif

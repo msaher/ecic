@@ -10,3 +10,16 @@ Expr *expr_init() {
 void expr_free(Expr *e) {
     free(e);
 }
+
+Expr *expr_simplify(Expr *e) {
+    switch (e->type) {
+        case INT:
+            return e;
+        case ADD:
+            return add_simplify(e->add);
+        case VAR:
+            return e;
+        default:
+            return e;
+    }
+}
