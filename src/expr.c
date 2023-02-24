@@ -23,3 +23,10 @@ Expr *expr_simplify(Expr *e) {
             return e;
     }
 }
+
+Expr *expr_int(int n) {
+    Expr *e = expr_init();
+    e->type = INT;
+    e->integer = n;
+    return e;
+}

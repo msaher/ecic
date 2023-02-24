@@ -10,8 +10,8 @@ typedef enum Etype {
     VAR,
 } Etype;
 
-struct Add;
 typedef struct Add Add;
+typedef struct Var Var;
 
 typedef struct Expr {
     union {
@@ -25,4 +25,6 @@ Expr *expr_init();
 void expr_free(Expr *e);
 
 Expr *expr_simplify(Expr *e);
+Expr *expr_int(int n);
+
 #endif
