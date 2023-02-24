@@ -37,3 +37,9 @@ Expr *simplify(Add *add) {
 
     return e;
 }
+
+void add_free(Add *add) {
+    free(add->a);
+    free(add->b);
+    free(add);
+}
